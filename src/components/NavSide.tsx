@@ -69,7 +69,7 @@ const NavSide: React.FC = () => {
                 label: "Map Interface",
               },
               {
-                key: "home",
+                key: "Alarm Monitor",
                 icon: <AimOutlined />,
                 label: "Home",
               },
@@ -107,7 +107,7 @@ const NavSide: React.FC = () => {
 
           <Routes>
             <Route path="/" element={<AlarmMonitor />}></Route>
-            <Route path="/home" element={<Home />}></Route>
+            <Route path="/home" element={<AlarmMonitor />}></Route>
           </Routes>
         </Content>
       </Layout>
