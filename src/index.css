@@ -1,0 +1,20 @@
+
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(223, 27, 27, 0.2);
+}
+
+.site-layout-sub-header-background {
+  background: rgb(0, 0, 0);
+}
+
+.site-layout-background {
+  background: rgb(0, 0, 0);
+}
+
+p{
+  text-align: center;
+  
+}
+
