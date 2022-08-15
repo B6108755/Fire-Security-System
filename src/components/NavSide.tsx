@@ -72,7 +72,7 @@ const NavSide: React.FC = () => {
               {
                 key: "alarmMonitor",
                 icon: <AimOutlined />,
-                label: "Home",
+                label: "Alarm Monitor",
               },
               {
                 key: "3",

@@ -31,18 +31,18 @@ const Total_fire_Alam = (props: Props) => {
           //   'rgba(255, 99, 132, 1)',
         ],
         borderWidth: 0,
-        datalabels:{
-          labels:{
-            title:null
-          }
-        }
+        datalabels: {
+          labels: {
+            title: null,
+          },
+        },
       },
     ],
   };
   return (
     <div
       style={{
-        width: "160px",
+        width: "40%",
         color: "black",
         // backgroundColor: "#84B9B6",
         display: "inline-block",

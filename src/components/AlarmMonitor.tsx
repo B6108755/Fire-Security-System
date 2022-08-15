@@ -6,6 +6,9 @@ import type { RadioChangeEvent } from "antd";
 import "antd/dist/antd.css";
 import { Col, Divider, Row } from "antd";
 import d3 from "../../public/img/3D.jpg";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import { Progress } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 import {
   VideoCameraOutlined,
@@ -40,7 +43,28 @@ const suffix = (
 );
 const onSearch = (value: string) => console.log(value);
 
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 const AlarmMonitor = (props: Props) => {
+  const data = {
+    //labels: ["Red", "Blue"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [12, 19],
+        backgroundColor: ["red", "blue"],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
   const [mode, setMode] = useState<TabPosition>("top");
   const handleModeChange = (e: RadioChangeEvent) => {
     setMode(e.target.value);
@@ -98,6 +122,29 @@ const AlarmMonitor = (props: Props) => {
               width: "425px",
             }}
           />
+          <div
+            style={{
+              width: "400px",
+              textAlign: "center",
+              marginLeft: "10px",
+              marginTop: "20px",
+            }}
+          >
+            <Row>
+              <Col xl={8}>
+                <Progress type="circle" percent={75} />
+                <p style={{ marginTop: "10px" }}>Completion rate</p>
+              </Col>
+              <Col xl={8}>
+                <Progress type="circle" percent={50} />
+                <p style={{ marginTop: "10px" }}>Single Alarm</p>
+              </Col>
+              <Col xl={8}>
+                <Progress type="circle" percent={35} />
+                <p style={{ marginTop: "10px" }}>Multi map alarm</p>
+              </Col>
+            </Row>
+          </div>
         </p>
         <p
           style={{
