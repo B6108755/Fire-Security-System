@@ -22,6 +22,7 @@ import {
 //
 import AlarmMonitor from "./AlarmMonitor";
 import Home from "./Home";
+import MapInterface from "../sections/MapInterface";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -69,7 +70,7 @@ const NavSide: React.FC = () => {
                 label: "Map Interface",
               },
               {
-                key: "home",
+                key: "alarmMonitor",
                 icon: <AimOutlined />,
                 label: "Home",
               },
@@ -106,8 +107,8 @@ const NavSide: React.FC = () => {
           {/* <AlarmMonitor></AlarmMonitor> */}
 
           <Routes>
-            <Route path="/" element={<AlarmMonitor />}></Route>
-            <Route path="/home" element={<Home />}></Route>
+            <Route path="/" element={<MapInterface />}></Route>
+            <Route path="/alarmMonitor" element={<AlarmMonitor />}></Route>
           </Routes>
         </Content>
       </Layout>
