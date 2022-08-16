@@ -11,6 +11,7 @@ import {
 import { Col, Layout, Menu, Row } from "antd";
 import React from "react";
 import "antd/dist/antd.css";
+import VideoWall from "../pages/VideoWall";
 import {
   NavLink,
   BrowserRouter,
@@ -109,6 +110,7 @@ const NavSide: React.FC = () => {
           <Routes>
             <Route path="/" element={<MapInterface />}></Route>
             <Route path="/alarmMonitor" element={<AlarmMonitor />}></Route>
+            <Route path="/4" element={<VideoWall />}></Route>
           </Routes>
         </Content>
       </Layout>
