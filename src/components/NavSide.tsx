@@ -45,7 +45,10 @@ const NavSide: React.FC = () => {
           Fire & Security System
         </p>
       </Header>
-      <Layout style={{ height: "92vh" }}>
+      <Layout 
+      // style={{ height: "92vh" }}
+      className="h-full"
+      >
         <Sider style={{ backgroundColor: "dark" }}>
           <p
             className="align-center"
