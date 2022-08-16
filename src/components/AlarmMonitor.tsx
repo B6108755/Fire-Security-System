@@ -46,25 +46,6 @@ const onSearch = (value: string) => console.log(value);
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const AlarmMonitor = (props: Props) => {
-  const data = {
-    //labels: ["Red", "Blue"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19],
-        backgroundColor: ["red", "blue"],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
   const [mode, setMode] = useState<TabPosition>("top");
   const handleModeChange = (e: RadioChangeEvent) => {
     setMode(e.target.value);
@@ -132,15 +113,32 @@ const AlarmMonitor = (props: Props) => {
           >
             <Row>
               <Col xl={8}>
-                <Progress type="circle" percent={75} />
+                <Progress
+                  type="circle"
+                  percent={64}
+                  strokeColor="red"
+                  trailColor="blue"
+                />
                 <p style={{ marginTop: "10px" }}>Completion rate</p>
               </Col>
               <Col xl={8}>
-                <Progress type="circle" percent={50} />
+                <Progress
+                  type="circle"
+                  percent={30}
+                  strokeColor="red"
+                  trailColor="blue"
+                  format={() => "Low"}
+                />
                 <p style={{ marginTop: "10px" }}>Single Alarm</p>
               </Col>
               <Col xl={8}>
-                <Progress type="circle" percent={35} />
+                <Progress
+                  type="circle"
+                  percent={90}
+                  strokeColor="red"
+                  trailColor="blue"
+                  format={() => "High"}
+                />
                 <p style={{ marginTop: "10px" }}>Multi map alarm</p>
               </Col>
             </Row>
@@ -185,7 +183,7 @@ const AlarmMonitor = (props: Props) => {
               width: "425px",
             }}
           />
-          <p
+          <div
             style={{
               color: "white",
               marginTop: "15px",
@@ -193,13 +191,37 @@ const AlarmMonitor = (props: Props) => {
               marginLeft: "30px",
             }}
           >
-            {" "}
-            Zone A
-            <span style={{ color: "blue", marginLeft: "10px" }}>
-              (Fire alarm signle tody)
-            </span>
-          </p>
-          <p
+            <Row gutter={1}>
+              <Col xl={3}>Zone A</Col>
+              <Col xl={10}>
+                <span style={{ color: "blue", marginLeft: "10px" }}>
+                  (Fire alarm signle tody)
+                </span>
+              </Col>
+              <Col xl={8}>
+                <div
+                  style={{
+                    height: "2px",
+                    width: "1px",
+                    marginLeft: "80px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <Progress
+                    width={25}
+                    type="circle"
+                    percent={50}
+                    format={() => " "}
+                    strokeWidth={9}
+                  />
+                </div>
+              </Col>
+              <Col xl={3}>
+                <span>50%</span>
+              </Col>
+            </Row>{" "}
+          </div>
+          <div
             style={{
               color: "white",
               marginTop: "15px",
@@ -207,13 +229,38 @@ const AlarmMonitor = (props: Props) => {
               marginLeft: "30px",
             }}
           >
-            {" "}
-            Zone B
-            <span style={{ color: "blue", marginLeft: "10px" }}>
-              (Fire alarm signle tody)
-            </span>
-          </p>
-          <p
+            <Row gutter={1}>
+              <Col xl={3}>Zone B</Col>
+              <Col xl={10}>
+                <span style={{ color: "blue", marginLeft: "10px" }}>
+                  (Fire alarm signle tody)
+                </span>
+              </Col>
+              <Col xl={8}>
+                <div
+                  style={{
+                    height: "2px",
+                    width: "1px",
+                    marginLeft: "80px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <Progress
+                    width={25}
+                    type="circle"
+                    percent={13}
+                    strokeColor="red"
+                    format={() => " "}
+                    strokeWidth={9}
+                  />
+                </div>
+              </Col>
+              <Col xl={3}>
+                <span>13%</span>
+              </Col>
+            </Row>{" "}
+          </div>
+          <div
             style={{
               color: "white",
               marginTop: "15px",
@@ -221,13 +268,38 @@ const AlarmMonitor = (props: Props) => {
               marginLeft: "30px",
             }}
           >
-            {" "}
-            Zone C
-            <span style={{ color: "blue", marginLeft: "10px" }}>
-              (Fire alarm signle tody)
-            </span>
-          </p>
-          <p
+            <Row gutter={1}>
+              <Col xl={3}>Zone C</Col>
+              <Col xl={10}>
+                <span style={{ color: "blue", marginLeft: "10px" }}>
+                  (Fire alarm signle tody)
+                </span>
+              </Col>
+              <Col xl={8}>
+                <div
+                  style={{
+                    height: "2px",
+                    width: "1px",
+                    marginLeft: "80px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <Progress
+                    width={25}
+                    type="circle"
+                    percent={37}
+                    strokeColor="yellow"
+                    format={() => " "}
+                    strokeWidth={9}
+                  />
+                </div>
+              </Col>
+              <Col xl={3}>
+                <span>37%</span>
+              </Col>
+            </Row>{" "}
+          </div>
+          <div
             style={{
               color: "white",
               marginTop: "15px",
@@ -235,12 +307,37 @@ const AlarmMonitor = (props: Props) => {
               marginLeft: "30px",
             }}
           >
-            {" "}
-            Zone D
-            <span style={{ color: "blue", marginLeft: "10px" }}>
-              (Fire alarm signle tody)
-            </span>
-          </p>
+            <Row gutter={1}>
+              <Col xl={3}>Zone D</Col>
+              <Col xl={10}>
+                <span style={{ color: "blue", marginLeft: "10px" }}>
+                  (Fire alarm signle tody)
+                </span>
+              </Col>
+              <Col xl={8}>
+                <div
+                  style={{
+                    height: "2px",
+                    width: "1px",
+                    marginLeft: "80px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <Progress
+                    width={25}
+                    type="circle"
+                    percent={50}
+                    strokeColor="pink"
+                    format={() => " "}
+                    strokeWidth={9}
+                  />
+                </div>
+              </Col>
+              <Col xl={3}>
+                <span>50%</span>
+              </Col>
+            </Row>{" "}
+          </div>
         </p>
       </Col>
 
