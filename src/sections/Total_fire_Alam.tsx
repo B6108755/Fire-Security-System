@@ -42,7 +42,7 @@ const Total_fire_Alam = (props: Props) => {
   return (
     <div
       style={{
-        width: "160px",
+        width: "40%",
         color: "black",
         // backgroundColor: "#84B9B6",
         display: "inline-block",
