@@ -1,36 +1,62 @@
-const people = [
-  {
-    name: "Calvin Hawkins",
-    email: "calvin.hawkins@example.com",
-    image:
-      "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  {
-    name: "Kristen Ramos",
-    email: "kristen.ramos@example.com",
-    image:
-      "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  {
-    name: "Ted Fox",
-    email: "ted.fox@example.com",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-];
+import { Mentions } from "antd";
+import React, { useState } from "react";
+import { Col, Divider, Row, Button } from "antd";
+type Props = {};
+const { Option } = Mentions;
 
-export default function Example() {
+const MOCK_DATA = {
+  "@": ["afc163", "zombiej", "yesmeck"],
+  "#": ["1.0", "2.0", "3.0"],
+};
+
+type PrefixType = keyof typeof MOCK_DATA;
+
+const VideoWall = (props: Props) => {
+  const [prefix, setPrefix] = useState<PrefixType>("@");
+  const onSearch = (_: string, newPrefix: PrefixType) => {
+    setPrefix(newPrefix);
+  };
   return (
-    <ul className="divide-y divide-gray-200">
-      {people.map((person) => (
-        <li key={person.email} className="py-4 flex">
-          <img className="h-10 w-10 rounded-full" src={person.image} alt="" />
-          <div className="ml-3">
-            <p className="text-sm text-white-400 font-medium">{person.name}</p>
-            <p className="text-sm text-gray-500">{person.email}</p>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <>
+      <div className="bg-[#5e2019] w-100 h-20 mt-2 mr-2 ml-2 rounded">
+        <Row>
+          <Col xl={8}>
+            <div className="text-white-400 text-left mt-2 ml-10 text-xl">
+              Video Wall Integration
+            </div>
+            <div className="text-left mt-0 ml-10 text-sm italic">
+              Video Wall Integration
+            </div>
+          </Col>
+        </Row>
+      </div>
+      <div className="bg-[#5e2019] w-100 h-20 mt-1 mr-2 ml-2 rounded">
+        <p className="text-left pt-2 ml-10">Network</p>
+        <Row>
+          <Col xl={16}>
+            <Mentions
+              className="ml-10 mt-1"
+              style={{ width: "100%" }}
+              placeholder="Network"
+            ></Mentions>
+          </Col>
+          <Col xl={3} className="text-center ml-10 mt-1">
+            <Button type="primary" ghost style={{ width: "130px" }}>
+              Cancel
+            </Button>
+          </Col>
+          <Col xl={3} className="mt-1 ">
+            <Button type="primary" danger style={{ width: "130px" }}>
+              Seach
+            </Button>
+          </Col>
+        </Row>
+        {/* <div className="w-50">
+          
+        </div> */}
+      </div>
+    </>
   );
-}
+};
+
+export default VideoWall;
