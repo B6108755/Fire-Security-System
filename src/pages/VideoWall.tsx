@@ -1,6 +1,7 @@
 import { Mentions } from "antd";
 import React, { useState } from "react";
 import { Col, Divider, Row, Button } from "antd";
+
 type Props = {};
 const { Option } = Mentions;
 
@@ -18,7 +19,10 @@ const VideoWall = (props: Props) => {
   };
   return (
     <>
-      <div className="bg-[#5e2019] w-100 h-20 mt-2 mr-2 ml-2 rounded">
+      <div
+        style={{ width: "80%", marginLeft: "125px" }}
+        className="bg-[#5e2019] h-20 mt-2 mr-2  rounded"
+      >
         <Row>
           <Col xl={8}>
             <div className="text-white-400 text-left mt-2 ml-10 text-xl">
@@ -30,7 +34,10 @@ const VideoWall = (props: Props) => {
           </Col>
         </Row>
       </div>
-      <div className="bg-[#5e2019] w-100 h-20 mt-1 mr-2 ml-2 rounded">
+      <div
+        style={{ width: "80%", marginLeft: "125px" }}
+        className="bg-[#5e2019] h-20 mt-2 mr-2  rounded"
+      >
         <p className="text-left pt-2 ml-10">Network</p>
         <Row>
           <Col xl={16}>
@@ -51,9 +58,68 @@ const VideoWall = (props: Props) => {
             </Button>
           </Col>
         </Row>
-        {/* <div className="w-50">
-          
-        </div> */}
+      </div>
+      <div className="mt-8">
+        <Row gutter={[32, 8]} style={{ justifyContent: "center" }}>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+        </Row>
+        <Row
+          gutter={[32, 8]}
+          style={{ marginTop: "15px", justifyContent: "center" }}
+        >
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+        </Row>
+        <Row
+          gutter={[32, 8]}
+          style={{ marginTop: "15px", justifyContent: "center" }}
+        >
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+          <Col xl={5}>
+            <img src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg"></img>
+            <p>1198789/560</p>
+          </Col>
+        </Row>
       </div>
     </>
   );
