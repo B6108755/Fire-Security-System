@@ -24,6 +24,7 @@ import {
 import AlarmMonitor from "./AlarmMonitor";
 import Home from "./Home";
 import MapInterface from "../sections/MapInterface";
+import Report from "../pages/Report";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -44,7 +45,11 @@ const NavSide: React.FC = () => {
           Fire & Security System
         </p>
       </Header>
-      <Layout style={{ height: "120vh" }}>
+
+      <Layout
+        // style={{ height: "92vh" }}
+        className="h-full"
+      >
         <Sider style={{ backgroundColor: "dark" }}>
           <p
             className="align-center"
@@ -91,7 +96,7 @@ const NavSide: React.FC = () => {
                 label: "Event Notification",
               },
               {
-                key: "6",
+                key: "Report",
                 icon: <SnippetsOutlined />,
                 label: "Report",
               },
@@ -111,6 +116,7 @@ const NavSide: React.FC = () => {
             <Route path="/" element={<MapInterface />}></Route>
             <Route path="/alarmMonitor" element={<AlarmMonitor />}></Route>
             <Route path="/4" element={<VideoWall />}></Route>
+            <Route path="/Report" element={<Report />}></Route>
           </Routes>
         </Content>
       </Layout>
