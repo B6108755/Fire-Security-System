@@ -50,7 +50,7 @@ const NavSide: React.FC = () => {
         // style={{ height: "92vh" }}
         className="h-full"
       >
-        <Sider style={{ backgroundColor: "dark" }}>
+        <Sider style={{ backgroundColor: "dark", }}>
           <p
             className="align-center"
             style={{ color: "white", marginTop: "10px" }}

@@ -52,10 +52,9 @@ const MapInterface = (props: Props) => {
     // }, 1000);
   });
   return (
-      <Layout style={{ display: "block" }}>
-        <Content style={{ backgroundColor: "#697C79", height: "80%" }}>
-          <Layout>
-            <Header style={{ padding: 0 }}>
+      // <Layout style={{ display: "block" }}>
+      <div className='h-full'>
+            <div style={{ padding: 0 }}>
               <Row>
                 <Col span={2}></Col>
                 <Col span={6}>
@@ -74,8 +73,9 @@ const MapInterface = (props: Props) => {
                 </Col>
                 <Col span={2} style={{}}></Col>
               </Row>
-            </Header>
-            <Content style={{ height: "90vh", backgroundColor: "#010101" }}>
+            </div>
+
+            <div style={{ backgroundColor: "#010101" }}>
               <Row style={{}}>
                 <Col span={1}></Col>
                 <Col span={6}>
@@ -94,11 +94,9 @@ const MapInterface = (props: Props) => {
                 </Col>
                 <Col span={1}></Col>
               </Row>
-            </Content>
-          </Layout>
-        </Content>
-      </Layout>
-    
+            </div>
+          
+      </div>
   )
 }
 
